@@ -105,6 +105,19 @@ If the validation routine makes note of an error, Prophet will abort with an exc
 
 You can also ask Prophet to validate a property based on recommended values.
 
+=head3 Defining a database
+
+A database can have settings that are used by the application. These are implemented via a special record of the type C<__prophet_db_settings>. There is one "property" or database setting per record, and each database setting, like any normal record, requires a uuid. Here are some settings from SD:
+
+    sub database_settings {
+            statuses            => ['24183C4D-EFD0-4B16-A207-ED7598E875E6' => qw/new open stalled closed rejected/],
+            active_statuses            => ['C879A68F-8CFE-44B5-9EDD-14E53933669E' => qw/new open/],
+            default_status      => ['2F9E6509-4468-438A-A733-246B3061003E' => 'new' ],
+            ...
+    }
+
+These would be defined in the App class of your project. For SD, these are located in App::SD.
+
 =head1 Glossary
 
 =head2 Record
@@ -119,7 +132,9 @@ A property is a name/value pair associated with a record.
 
 A collection is used to search for and operate on records matching certain criteria. 
 
-=head2 Replica (WIP)
+=head2 Replica
+
+WIP
 
 The database that a Prophet application works from. 
 The local state of all the data. Alice keeps her most recent fetch of the database in her replica.
