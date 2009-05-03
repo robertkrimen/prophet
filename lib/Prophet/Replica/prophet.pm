@@ -421,6 +421,7 @@ sub _write_serialized_record {
         cas_dir => $self->record_cas_dir
     );
 
+    # FIXME What is this used for?
     my $record = {
         uuid    => $args{uuid},
         type    => $args{type},

@@ -124,9 +124,30 @@ These would be defined in the App class of your project. For SD, these are locat
 
 A record is a collection of properties (much like an SQL table is a collection of columns). A record must have a type and uuid. It may also have an luid, which is like a uuid but only valid for the local environment/replica.
 
+    uuid    The unique identifier for the record
+    type
+    props
+
 =head2 Property
 
 A property is a name/value pair associated with a record.
+
+=head2 Changeset
+
+    data (content)
+    cas_key (fingerprint)
+
+=head2 Changeset index
+
+=head2 Changeset index entry
+
+=head2 Record index
+
+=head2 Record index entry
+
+    uuid
+    type
+    cas_key
 
 =head2 Collection
 
